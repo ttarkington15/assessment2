@@ -25,42 +25,34 @@
     It uses the HTML in /debugging/index.html  
     Points Available: 30points
 */
-
-$(function () {
-debugger;
+$(document).ready(function () {
 
 
     //This is supposed to add an event listener but it's causing an error
     //Fix it please.
-   
+    //document.getElementById('btnMake').addEventListener('click', build);
+    $('#btnMake').on('click', build);
 
-    $('#btnMke').on('click', build);
-
-        
     function build() {
-        var firstName = $('#firstName').val();
+		
+        var firstName = $('#firstName');
+        var firstNameValue = firstName.val();
 
 
-
-        var lastName = $('#lastName').val();
-     
+        var lastName = $('#lastName');
+        var lastNameValue = lastName.val();
 
         /*invalid should add a red border around the respective input
             It will also show a hidden error message */
-        if (firstName === '') {
-            firstName.addClass('.invalid');
-
-            var parentDiv = firstName.closest('#input-group');
-            var errorSpan = parentDiv.find('.errors');
-            errorSpan.show();
+        if (firstNameValue === '') {
+            firstName.addClass('invalid');
+            $('.group1').find('.errors').show();
         }
 
-        if (lastName === '') {
+        if (lastNameValue === '') {
             lastName.addClass('invalid');
+            $('.group2').find('.errors').show();
 
-            var parentDiv = lastName.closest('.input-group');
-            var errorSpan = parentDiv.find('.errors');
-            errorSpan.visible();
         }
 
 
@@ -70,19 +62,23 @@ debugger;
             Please fix it
         ======================================*/
 
-		/*
-        var userObject = {
-            firstName: ,
-            lastName: ,
-            fullName: function () {
-                return firstName. + ' ' + lastName.;
-            },
-            state: $('#state').get()
-        };
 		
-		console.log(userObject.fullName());
+        var userObject = {
+            firstName: $('#firstName').val(),
+            lastName: $('#lastName').val(),
+            fullName: function () {
+                return this.firstName + ' ' + this.lastName;
+            },
+            state: $('#state').val()
+        };
+        
+        console.log(userObject.firstName);
+        console.log(userObject.lastName);
+        console.log(userObject.state);
+        console.log(userObject.fullName());
         console.log(userObject);
-		*/
+       
+	
 
         
 
@@ -111,9 +107,11 @@ debugger;
     console.log(foo) // Outputs 11
 */
 
-/*
-Write getLength function here
-*/
+function myFunction (inputString) {
+    return inputString.length
+}
+
+console.log(myFunction('test'))
 
 /* Uncomment this to test getLength function
 console.log('-------------Get Length----------------'); 
@@ -135,9 +133,12 @@ console.log('-----------------------------');
     console.log(foo) // Outputs 13
 */
 
-/*
-Write sumArray function here
-*/
+var foo = [2,5,6];
+
+function getSum(total, num){
+    return total + num;
+}
+console.log(foo.reduce(getSum));
 
 /* Uncomment this to test sumArray function
 console.log('-------------  SUM ARRAY ----------------'); 
@@ -161,9 +162,10 @@ console.log('-----------------------------');
     console.log(foo2) //Outputs "50%"
 */
 
-/*
-Write percentage function here
-*/
+function toPercent (num){
+    return (num*100) + "%"
+}
+console.log(toPercent(.33))
 
 /* Uncomment this to test percentage function
 console.log('------------ Percentage-----------------');
@@ -186,10 +188,12 @@ console.log('-----------------------------');
     console.log(newD);  //outputs Thu Jan 11 2001 00:00:00 GMT-0600 (Central Standard Time)
 */
 
-/*
-Write addDays function here
-*/
-
+function addDays(date, days) {
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+  console.log(addDays('1/1/2001', 10))
 
 /* Uncomment this to test addDays function
 var d = new Date('1/1/2001');
@@ -198,10 +202,6 @@ console.log(newD); //outputs Thu Jan 11 2001 00:00:00 GMT-0600 (Central Standard
 d = new Date('9/10/2001');
 newD = addDays(d, 1000);
 console.log(newD); //outputs Thu Jan 11 2001 00:00:00 GMT-0600 (Central Standard Time)
-//I have a copy paste error in the date section, 
-console.log(newD); //outputs Thu Jan 11 2001 00:00:00 GMT-0600 (Central Standard Time)
-should say
-console.log(newD); //outputs Sun Jun 06 2004 00:00:00 GMT-0500 (Central Daylight Time)
 */
 
 

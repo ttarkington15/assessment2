@@ -4,7 +4,6 @@
     <head>
         <title>Sweepstakes</title>
         <link rel="stylesheet" href="styles/main.css">
-        <script src="http://localhost:35729/livereload.js"></script>
     </head>
 
     <body>
@@ -41,23 +40,24 @@
                         nunc.
                     </p>
                 </div>
+                <section id="messages">
+                </section>
                 <form>
-                    <section id="form-body">
                     <div class="input-group">
                         <label for="firstName">First Name</label>
                         <input type="text" name="firstName" id="firstName" placeholder="First Name" />
                     </div>
-                    <div class="input-group">
+                   <div class="input-group">
                         <label for="lastName">Last Name</label>
                         <input type="text" name="lastName" id="lastName" placeholder="Last Name" />
                     </div>
                     <div class="input-group">
                         <label for="emailAddress">Email Address</label>
-                        <input type="text" name="emailAddress" id="emailAddress" placeholder="Email Address" />
+                        <input type="emailAddress" name="emailAddress" id="emailAddress" placeholder="Email Address" />
                     </div>
-                    <div class="input-group">
-                        <label for="findUs">How did you find us?</label>
-                        <select id="findUs">
+                   <div class="input-group">
+                        <label for="howDid">How did you find us</label>
+                        <select id="howDid">
                             <option value=""></option>
                             <option>Option1</option>
                             <option>Option2</option>
@@ -65,22 +65,22 @@
                             <option>Option4</option>
                         </select>
                     </div>
-                    <div class="input-group">
-                        <!-- placeholder not visible -->
-                        <label for="whyNeed">Why do you need this blender?</label>
-                        <textarea name="whyNeed" id="whyNeed" placeholder="Why do you need this">
-                        </textarea>
-                    </div>
+                    <form>
+                        <div class="input-group">
+                            <label for="whyNeed">Why do you need this blender?</label>
+                            <textarea name="whyNeed" id= "whyNeed" placeholder= "Why do you need this"></textarea>
+                        </div>
+                    </form>
                     <div class="check-group">
-                    <label for="terms">
-                    <input type="checkbox" name="terms" id="terms"/>
-                    By checking this box you accept our terms and conditions</label>
+                        <label for="terms">
+                        <input type="checkbox" name="terms" id="terms"/>
+                           By checking this box you accept our terms and conditions</label>
                     </div>
+                </form>
                 <section class="control-panel">
                     <button id="btnSubmit">Submit</button>
                     <button id="btnReset">Reset</button>
                 </section>
-                </form>
             </div>
             <div class="footer">
                 <ul>
@@ -93,6 +93,8 @@
             </div>
         </div>
         <script src="scripts/main.js"></script>
+        <!-- <script src="http://localhost:35729/livereload.js"></script> -->
+        <!-- commented about out b/c it kept throwing an error into console, and the code worked w/o it -->
     </body>
 
 </html>

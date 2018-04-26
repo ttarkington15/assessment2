@@ -125,7 +125,6 @@ ul {
     margin: 0 auto;
 }
 
-/* could use some margin-right */
 .input-group label{
     float: left;
     width: 25%;
@@ -134,7 +133,7 @@ ul {
 .input-group, .check-group{
     padding:20px;
 }
-/* select has rounded corners and both arrows are displayed */
+/* If I had more time I would correct select so that it has squared corners and only one arrow */
 .input-group input,
 .input-group textarea,
 .input-group select{
@@ -150,6 +149,11 @@ ul {
 .input-group select{
     border-radius: 0px;
 }
+
+.check-group{
+    text-align: center;
+}
+
 
 .control-panel{
     text-align:center;
@@ -171,3 +175,20 @@ ul {
     border:1px solid #ff0000;
     background:#ff9191; 
 }
+
+.invalid::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ff0000;
+  }
+  .invalid::-moz-placeholder { /* Firefox 19+ */
+    color: #ff0000;
+  }
+  .invalid:-ms-input-placeholder { /* IE 10+ */
+    color: #ff0000;
+  }
+  .invalid:-moz-placeholder { /* Firefox 18- */
+    color: #ff0000;
+  }
+
+  #messages{
+    text-align: center;
+  }
